@@ -1,7 +1,7 @@
 <template>
   <header-nav></header-nav>
-  <todolist></todolist>
-  <footer-nav></footer-nav>
+  <todolist :listeTaches="listeTaches" @update-liste-taches="listeTaches = $event"></todolist>
+  <footer-nav :listeTaches="listeTaches" @update-liste-taches="listeTaches = $event"></footer-nav>
 </template>
 
 <script>
@@ -14,8 +14,14 @@ export default {
     FooterNav,
     HeaderNav,
     Todolist,
-  }
+  },
+  data() {
+    return {
+      listeTaches: [],
+    };
+  },
 }
+
 </script>
 
 <style>
