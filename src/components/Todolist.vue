@@ -107,7 +107,6 @@
           statut: tache.statut,
           gerant:tache.gerant
         };
-        console.log(this.selectionTache);
       },
       deleteTask(index) {
         this.listeTaches.splice(index, 1);
