@@ -53,6 +53,7 @@
           </div>
         </li>
       </ul>
+        <button @click="deleteAllTask()">Supprimer toutes les tâches</button>
     </div>
   </template>
 
@@ -96,6 +97,11 @@
         this.listeTaches[index].statut = this.selectionTache.statut;
         this.listeTaches[index].gerant = this.selectionTache.gerant;
         this.selectionTache = null;
+        this.$emit('update-liste-taches', this.listeTaches);
+      },
+      deleteAllTask()
+      {
+        this.listeTaches = [];
         this.$emit('update-liste-taches', this.listeTaches);
       },
       selectedTask(index) {
